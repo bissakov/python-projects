@@ -7,6 +7,7 @@ class FizzBuzz():
     def __init__(self, start, end):
         self.start = start
         self.end = end
+        self.res = ''
 
     def exec(self) -> None:
         for i in range(self.start, self.end + 1):
@@ -17,11 +18,15 @@ class FizzBuzz():
                 res += 'BUZZ'
             if len(res) == 0:
                 res += str(i)
-            print(res)
+            self.res += res
+
+    def get_result(self) -> str:
+        return self.res
 
 def main():
     fizzbuzz = FizzBuzz(1, 100)
     fizzbuzz.exec()
+    print(fizzbuzz.get_result())
 
 if __name__ == '__main__':
     main()
