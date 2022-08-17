@@ -10,17 +10,14 @@ class Count_Vowels():
         self.counter['total'] = self.get_total()
     
     def __count(self) -> None:
+        vowels = list(self.counter.keys())[:-1]
         for ch in self.text:
-            try:
-                self.counter[ch] += 1
-            except (KeyError):
+            if ch not in vowels:
                 continue
+            self.counter[ch] += 1
 
     def get_total(self) -> int:
-        total = 0
-        for val in self.counter.values():
-            total += val
-        return total
+        return sum(self.counter.values())
 
     def print_vowel_count(self) -> None:
         for key, val in self.counter.items():
