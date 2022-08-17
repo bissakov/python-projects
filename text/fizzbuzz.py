@@ -18,7 +18,7 @@ class FizzBuzz():
                 res += 'BUZZ'
             if len(res) == 0:
                 res += str(i)
-            self.res += res
+            self.res += res + '\n'
 
     def get_result(self) -> str:
         return self.res
